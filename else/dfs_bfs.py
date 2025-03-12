@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open('input.txt', 'r')
+sys.stdin = open('../input.txt', 'r')
 
 def pre_order(n, cnt):
     if n == -1:
