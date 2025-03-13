@@ -1,34 +1,36 @@
 import sys
-sys.stdin = open('input.txt','r')
+sys.stdin = open("input.txt", "r")
 
-# 완전 탐색을 해야한다
-# 모든 자리의 숫자를 각각 바꿔 주면서 비교
-#  -> 방문 처리를 해주어야 한다
-# 문제 조건의 교환 횟수에 도달하면 최대값 비교 후 종료
+def find(start_x, start_y, cnt):
+    global result
+    dy = [1, -1, 0, 0]
+    dx = [0, 0, -1, 1]
 
-def dfs(now_level):
-    global max_value
-    if now_level == finish_level:
-        max_value = max(max_value, int(''.join(num)))
+    if cnt == 6:
+        if ''.join(map(str, number)) not in visited:
+            visited[''.join(map(str, number))] = 1
+            result += 1
         return
-    for i in range(len(num)):
-        for j in range(i+1, len(num)):
-            num[i], num[j] = num[j], num[i]
 
-            str_num = ''.join(num)
-            if visited.get((now_level, int(str_num)))is None:
-                visited[(now_level, int(str_num))] = 1
-                dfs(now_level + 1)
+    for k in range(4):
+        ny = start_y + dy[k]
+        nx = start_x + dx[k]
 
-            num[i], num[j] = num[j], num[i]
+        if 0 <= ny < 4 and 0 <= nx < 4:
+            number.append(arr[ny][nx])
+            find(ny, nx, cnt + 1)
+            number.pop()
 
 T = int(input())
 for tc in range(1, T+1):
-    num, finish_level = input().split()
-    num = list(num)
-    finish_level = int(finish_level)
-    # 방문 처리는, 각 level 내에서의 중복을 막아주기 위함
+    arr = [list(map(int, input().split())) for _ in range(4)]
+    number = []
     visited = {}
-    max_value = -1
-    dfs(0)
-    print(f'#{tc} {max_value}')
+
+    result = 0
+    for y in range(4):
+        for x in range(4):
+            number = [arr[y][x]]
+            find(y, x, 0)
+
+    print(f'#{tc} {result}')
