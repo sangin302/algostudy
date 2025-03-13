@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open("input.txt", "r")  # 같은 폴더 내의 input.txt 파일 읽기
+sys.stdin = open("../input.txt", "r")  # 같은 폴더 내의 input.txt 파일 읽기
 
 n, m = map(int, input().split())
 arr_1 = [list(map(int, input().split())) for _ in range(n)]
