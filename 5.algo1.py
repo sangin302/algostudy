@@ -12,7 +12,7 @@ for tc in range(1, T+1):
         print(f'#{tc} 0')
 
     elif len(find) == k:
-        print(f'#{tc} {len(find)+1}')
+        print(f'#{tc} {len(arr)+1}')
 
     else:
         for j in range(len(find)-k + 1):
