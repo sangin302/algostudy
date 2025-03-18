@@ -1,5 +1,3 @@
-import sys
-sys.stdin = open("input.txt", "r")
 
 def dfs(d):
     for k in li[d]:
