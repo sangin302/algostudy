@@ -1,6 +1,5 @@
-
 def find(start):
-
+    pass
 
 n = int(input())
 li = [[] for _ in range(n)]
