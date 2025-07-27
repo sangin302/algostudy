@@ -71,3 +71,4 @@ for i in rel:
             min_result.append(c)
             
 print(''.join(map(str,min_result)))
+
