@@ -1,2 +1,6 @@
-"abstract algebra"
-"PrOgRaMmErS"
+["leo", "kiki", "eden"]
+["eden", "kiki"]
+["marina", "josipa", "nikola", "vinko", "filipa"]
+["josipa", "filipa", "marina", "nikola"]
+["mislav", "stanko", "mislav", "ana"]
+["stanko", "ana", "mislav"]
